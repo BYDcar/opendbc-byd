@@ -4,7 +4,7 @@
 
 研究CAN协议需要硬件获取CAN总线的信号，目前最便宜的可能是几十元的开源硬件CANable USB转CAN适配器。作为初步研究我是从OBD2接口的4, 6 和14针引出CAN总线（接线参考图：https://openlightlabs.com/collections/frontpage/products/obd2-16-pin-pigtail-cable ）。电脑端软件可以使用开源的SocketCAN, Cangaroo或者SavvyCAN用于记录分析数据。  
 
-这堆dbc文件中的`byd-tang-phev-2015.dbc`是我研究一款2016款唐新能源插电混动车型做的，型号BYD6480STHEV，VIN开头LC0CD4C3×××××××××。我发现开关门之类的信号比较容易研究，容易发现对应的位置。而速度方向盘角度之类的变量较难研究解析。另外我发现用`candump`记录的文件，用`canplay`发送车辆没有反应可能是OBD2接口的CAN总线有过滤。  
+这堆dbc文件中的`byd_tang_phev_2015.dbc`是我研究一款2016款唐新能源插电混动车型做的，型号BYD6480STHEV，VIN开头LC0CD4C3×××××××××。我发现开关门之类的信号比较容易研究，容易发现对应的位置。而速度方向盘角度之类的变量较难研究解析。另外我发现用`candump`记录的文件，用`canplay`发送车辆没有反应可能是OBD2接口的CAN总线有过滤。  
 
 其实CAN总线解析有一些商家也在做，比如有些HUD抬头显示器也是依据CAN协议获取的数据。另外比亚迪原厂的诊断仪VDS2100或者第三方诊断仪应该也是通过CAN协议获取数据。如果能接触到相关硬件，可以考虑从这些硬件中尝试提取研究。  
 
