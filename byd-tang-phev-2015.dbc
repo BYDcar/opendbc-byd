@@ -1,0 +1,79 @@
+VERSION ""
+
+
+NS_ :
+    NS_DESC_
+    CM_
+    BA_DEF_
+    BA_
+    VAL_
+    CAT_DEF_
+    CAT_
+    FILTER
+    BA_DEF_DEF_
+    EV_DATA_
+    ENVVAR_DATA_
+    SGTYPE_
+    SGTYPE_VAL_
+    BA_DEF_SGTYPE_
+    BA_SGTYPE_
+    SIG_TYPE_REF_
+    VAL_TABLE_
+    SIG_GROUP_
+    SIG_VALTYPE_
+    SIGTYPE_VALTYPE_
+    BO_TX_BU_
+    BA_DEF_REL_
+    BA_REL_
+    BA_DEF_DEF_REL_
+    BU_SG_REL_
+    BU_EV_REL_
+    BU_BO_REL_
+    SG_MUL_VAL_
+
+BS_: 
+BU_: status_node 
+BO_ 301 status_message: 8 status_node
+   SG_ left_front_door_status : 0|1@0+ (1,0) [0|1] "" Vector__XXX
+   SG_ right_front_door_status : 1|1@0+ (1,0) [0|1] "" Vector__XXX
+   SG_ left_rear_door_status : 2|1@0+ (1,0) [0|1] "" Vector__XXX
+   SG_ right_rear_door_status : 3|1@0+ (1,0) [0|1] "" Vector__XXX
+   SG_ trunk_door_status : 4|1@0+ (1,0) [0|1] "" Vector__XXX
+   SG_ brake_status : 8|1@0+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 307 light_status_message: 8 status_node
+   SG_ position_light_status : 1|1@0+ (1,0) [0|1] "" Vector__XXX
+   SG_ low_beam_status : 2|1@0+ (1,0) [0|1] "" Vector__XXX
+   SG_ high_beam_status : 3|1@0+ (1,0) [0|1] "" Vector__XXX
+   SG_ left_turn_signal_status : 4|1@0+ (1,0) [0|1] "" Vector__XXX
+   SG_ right_turn_signal : 5|1@0+ (1,0) [0|1] "" Vector__XXX
+
+BA_DEF_ BO_ "GenMsgBackgroundColor" STRING ;
+BA_DEF_ BO_ "GenMsgForegroundColor" STRING ;
+BA_DEF_ BO_ "matchingcriteria" INT 0 0;
+BA_DEF_ BO_ "filterlabeling" INT 0 0;
+BA_DEF_ BO_ "matchingcriteria" INT 0 0;
+BA_DEF_ BO_ "filterlabeling" INT 0 0;
+BA_DEF_ BO_ "matchingcriteria" INT 0 0;
+BA_DEF_ BO_ "filterlabeling" INT 0 0;
+BA_DEF_ BO_ "matchingcriteria" INT 0 0;
+BA_DEF_ BO_ "filterlabeling" INT 0 0;
+BA_ "GenMsgForegroundColor" BO_ 301 "#000000";
+BA_DEF_DEF_ "GenMsgBackgroundColor" "#ffffff";
+BA_DEF_DEF_ "GenMsgForegroundColor" "#232629";
+BA_DEF_DEF_ "matchingcriteria" 0;
+BA_DEF_DEF_ "filterlabeling" 0;
+BA_DEF_DEF_ "matchingcriteria" 0;
+BA_DEF_DEF_ "filterlabeling" true;
+CM_ BU_ status_node "Default node if none specified";
+VAL_ 301 left_front_door_status 0 "left_front_door_closed" 1 "left_front_door_open";
+VAL_ 301 right_front_door_status 0 "right_front_door_closed" 1 "right_front_door_open";
+VAL_ 301 left_rear_door_status 0 "left_rear_door_closed" 1 "left_rear_door_open";
+VAL_ 301 right_rear_door_status 0 "right_back_door_closed" 1 "right_back_door_open";
+VAL_ 301 trunk_door_status 0 "trunk_door_closed" 1 "trunk_door_open";
+VAL_ 301 brake_status 0 "brake_not_pressed" 1 "brake_pressed";
+VAL_ 307 position_light_status 0 "position_light_off" 1 "position_light_on";
+VAL_ 307 low_beam_status 0 "low_beam_off" 1 "low_beam_on";
+VAL_ 307 high_beam_status 0 "high_beam_off" 1 "high_beam_on";
+VAL_ 307 left_turn_signal_status 0 "left_turn_signal_off" 1 "left_turn_signal_on";
+VAL_ 307 right_turn_signal 0 "right_turn_signal_off" 1 "right_turn_signal_on";
